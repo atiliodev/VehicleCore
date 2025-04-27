@@ -23,7 +23,7 @@ namespace VehiclePhysics
 
         public void Steer(float steer)
         {
-            outputSteer = steer * steerForce;
+            outputSteer = steerForce;
             steerInput = steer;
         }
 
@@ -57,9 +57,9 @@ namespace VehiclePhysics
 
             if (vehicleSpeed >= 7)
             {
-                if (Input.GetAxis("Horizontal") != 0)
+                if (steerInput != 0)
                 {
-                    steerForce = Mathf.Lerp(steerForce, maxSteer, (5) * Time.deltaTime);
+                    steerForce = Mathf.Lerp(steerForce, steerInput * maxSteer, (5) * Time.deltaTime);
                 }
                 else
                 {
@@ -68,13 +68,13 @@ namespace VehiclePhysics
             }
             else
             {
-                if (Input.GetAxis("Horizontal") != 0)
+                if (steerInput != 0)
                 {
-                    steerForce = Mathf.Lerp(steerForce, maxSteer, 5 * Time.deltaTime);
+                    steerForce = Mathf.Lerp(steerForce, steerInput * maxSteer, 5 * Time.deltaTime);
                 }
                 else
                 {
-                    steerForce = Mathf.Lerp(steerForce, maxSteer, 7 * Time.deltaTime);
+                    steerForce = Mathf.Lerp(steerForce, steerInput * maxSteer, 7 * Time.deltaTime);
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace VehiclePhysics
 {
     public class VehicleController : MonoBehaviour
     {
-        public enum VehicleCategory { Sedan, SUV, PickUp, Van, Hatch, Supercar, Truck }
+        public enum VehicleCategory { Sedan, SUV, PickUp, Van, Hatch, Supercar, Truck, Bus }
         public VehicleCategory vehicleCategory;
 
 
@@ -74,7 +74,7 @@ namespace VehiclePhysics
 
         private void ReadInput()
         {
-            throttleInput = controls.Driving.Throttle.ReadValue<float>();
+            throttleInput = controls.Driving.Throttle.ReadValue<float>() + -controls.Driving.Brake.ReadValue<float>();
             steerInput = controls.Driving.Steering.ReadValue<float>();
         }
 

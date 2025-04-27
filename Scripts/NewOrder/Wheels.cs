@@ -19,6 +19,7 @@ public class Wheels : MonoBehaviour
     [Header("Drift Settings")]
     public float driftForce = 2;
     public float frictionBase = 2;
+        public bool enableDrift;
 
     [Header("Differential Settings")]
     public float brakeIndex = 5;
@@ -118,7 +119,7 @@ public class Wheels : MonoBehaviour
             
         }
 
-        if(splitFator < frictionBase)
+        if(splitFator < frictionBase && enableDrift)
         {
             for(int i = 0; i < wheels.Length; i++)
             {
