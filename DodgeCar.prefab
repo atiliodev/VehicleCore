@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 8138242943249005634}
   m_Layer: 0
   m_Name: DodgeCar
-  m_TagString: Untagged
+  m_TagString: VehicleCore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44156,6 +44156,7 @@ MonoBehaviour:
   carRigidbody: {fileID: 2698719557526724520}
   driftForce: 2
   frictionBase: 2
+  enableDrift: 1
   brakeIndex: 5
   reduceFator: 0.003
   reduceFatorVelocity: 3.5

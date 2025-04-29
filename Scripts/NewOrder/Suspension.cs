@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace VehiclePhysics
+namespace VehicleCore
 {
     public class Suspension : MonoBehaviour
     {

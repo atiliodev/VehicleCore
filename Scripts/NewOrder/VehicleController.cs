@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-namespace VehiclePhysics
+namespace VehicleCore
 {
     public class VehicleController : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VehiclePhysics
+namespace VehicleCore
 {
     public class WheelComponent : MonoBehaviour
     {

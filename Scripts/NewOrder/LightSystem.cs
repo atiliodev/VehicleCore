@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-namespace VehiclePhysics
+namespace VehicleCore
 {
     public class LightSystem : MonoBehaviour
     {

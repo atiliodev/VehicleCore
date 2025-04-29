@@ -9847,8 +9847,9 @@ MonoBehaviour:
   - {fileID: 2970408467291511650}
   - {fileID: 4843550234831178621}
   carRigidbody: {fileID: 2399215403681821303}
-  driftForce: 2
+  driftForce: 0.2
   frictionBase: 2
+  enableDrift: 0
   brakeIndex: 5
   reduceFator: 0.003
   reduceFatorVelocity: 3.5
