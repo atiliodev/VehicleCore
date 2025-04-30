@@ -141,7 +141,7 @@ public class Wheels : MonoBehaviour
         rearLeftWheel.motorTorque = forceToLeftWheel;
         rearRightWheel.motorTorque = forceToRightWheel;
 
-        if (Input.GetAxis("Vertical") < 0 && brakeValue != 0)
+        if (VehicleController.inputV < 0 && brakeValue != 0)
         {
             if (currentGear > 2)
             {
@@ -175,7 +175,7 @@ public class Wheels : MonoBehaviour
     public void ReduceValue(float inputForce, float cl)
     {
         differentialBrake = brakeIndex * currentGear + (10 * (carSpeed /3));
-        if(Input.GetAxis("Vertical") < 0 && carSpeed > 2)
+        if(VehicleController.inputV < 0 && carSpeed > 2)
         {
             brakeIntensify = brakeReduce;
         }
@@ -183,9 +183,9 @@ public class Wheels : MonoBehaviour
         {
             brakeIntensify = 1;
         }
-        if (inputForce == 0 || cl <= 0.1f && (carSpeed > 3 || Input.GetAxis("Vertical") < 0))
+        if (inputForce == 0 || cl <= 0.1f && (carSpeed > 3 || VehicleController.inputV < 0))
         {
-            if (Input.GetAxis("Vertical") > 0)
+            if (VehicleController.inputV > 0)
             {
                 brakeValue = differentialBrake * reduceFator;
             }
@@ -231,16 +231,16 @@ public class Wheels : MonoBehaviour
             innerWheelTorque = inputForce * (factorCurve / 10);
             outerWheelTorque = inputForce * (factorCurve * 10);
 
-            directionOfDifferential = Mathf.Lerp(directionOfDifferential, 1 * Input.GetAxis("Horizontal"), 3.5f * Time.deltaTime);
+            directionOfDifferential = Mathf.Lerp(directionOfDifferential, 1 * VehicleController.inputH, 3.5f * Time.deltaTime);
 
-            if (Input.GetAxis("Horizontal") < 0)
+            if (VehicleController.inputH < 0)
             {
                 forceToLeftWheel = innerWheelTorque;
                 forceToRightWheel = outerWheelTorque;
                 rightForceOfDifferential = Mathf.Lerp(directionOfDifferential, 1, 3.5f * Time.deltaTime);
                 leftForceOfDifferential = Mathf.Lerp(directionOfDifferential, 0, 5.5f * Time.deltaTime);
             }
-            else if (Input.GetAxis("Horizontal") > 0)
+            else if (VehicleController.inputH > 0)
             {
                 forceToLeftWheel = outerWheelTorque;
                 forceToRightWheel = innerWheelTorque;
@@ -266,7 +266,7 @@ public class Wheels : MonoBehaviour
         sidewayFriction(rearLeftWheel.collider);
         sidewayFriction(rearRightWheel.collider);
 
-        if (Input.GetAxis("Vertical") < 0 && brakeValue != 0)
+        if (VehicleController.inputV < 0 && brakeValue != 0)
         {
 
             if (currentGear > 2)

@@ -21,7 +21,7 @@ namespace VehicleCore
 
         void Update()
         {
-            velocity = transmission.vehicleRigidbody.linearVelocity.magnitude * 50;
+            velocity = transmission.vehicleRigidbody.linearVelocity.magnitude * 3;
 
             int intValue = (int)velocity;
             speedText.text = " " + intValue.ToString("D3");

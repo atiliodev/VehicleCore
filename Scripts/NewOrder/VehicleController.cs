@@ -24,9 +24,12 @@ namespace VehicleCore
         [HideInInspector] public bool shift;
 
         private VehicleControls controls;
-        float throttleInput;
-        float steerInput;
+       [HideInInspector] public float throttleInput;
+       [HideInInspector] public float steerInput;
 
+
+        public static float inputV;
+        public static float inputH;
         private void Awake()
         {
             controls = new VehicleControls(); 
@@ -51,6 +54,8 @@ namespace VehicleCore
 
         private void Calls()
         {
+            inputV = throttleInput;
+            inputH = steerInput;
             velocityOfCar = rb.linearVelocity.magnitude;
             torqueForce = transmission.wheelForce();
             shift = transmission.onShift;

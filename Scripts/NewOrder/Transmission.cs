@@ -97,7 +97,7 @@ namespace VehicleCore
             {
                 indexReduce = 0;
             }
-            if (Input.GetAxis("Vertical") > 0 && !onShift)
+            if (VehicleController.inputV > 0 && !onShift)
             {
                 if (currentGear <= 1)
                 {
@@ -166,7 +166,7 @@ namespace VehicleCore
             }
             else
             {
-                if (Input.GetAxis("Vertical") > 0)
+                if (VehicleController.inputV > 0)
                 {
                     forceSense = 1;
                 }
@@ -181,9 +181,9 @@ namespace VehicleCore
 
             if (onRear)
             {
-                if (Input.GetAxis("Vertical") < 0)
+                if (VehicleController.inputV < 0)
                 {
-                    outputWheelForce = rearForce * rearFatorForce * Input.GetAxis("Vertical");
+                    outputWheelForce = rearForce * rearFatorForce * VehicleController.inputV;
                 }
                 else
                 {
@@ -217,7 +217,7 @@ namespace VehicleCore
                 }
                 else
                 {
-                    currentRPM = Input.GetAxis("Vertical") * 20 * 500;
+                    currentRPM = VehicleController.inputV * 20 * 500;
                 }
             }
             else
@@ -242,7 +242,7 @@ namespace VehicleCore
 
             if (vehicleSpeed <= 0.01f && !onChangeSense)
             {
-                if (Input.GetAxis("Vertical") < 0)
+                if (VehicleController.inputV < 0)
                 {
                     fatorChangeSense += 3 * Time.deltaTime;
                     if (fatorChangeSense >= minValueToChange)
@@ -252,7 +252,7 @@ namespace VehicleCore
                     }
                 }
 
-                if (Input.GetAxis("Vertical") > 0 && onRear)
+                if (VehicleController.inputV > 0 && onRear)
                 {
                     fatorChangeSense += 3 * Time.deltaTime;
                     if (fatorChangeSense >= minValueToChange)

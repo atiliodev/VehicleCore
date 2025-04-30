@@ -13,7 +13,7 @@ namespace VehicleCore
         Rigidbody vehicleRigidbody;
 
         float steerForce;
-        float steerInput;
+       [HideInInspector] float steerInput;
 
         public float steerAssistForce = 3f;
         public Transform centerOfMass;
